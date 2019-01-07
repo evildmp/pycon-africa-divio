@@ -10,6 +10,7 @@
 
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/page_wide_styles.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,14 +25,13 @@
   <body>
     {% cms_toolbar %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Brand</a>
+    <nav class="navbar navbar-expand-lg  bg-primary font-weight-bold text-uppercase">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav navbar-right navbar-dark mr-auto">
                 {% with dropdown=True %}
                     {% show_menu 0 0 100 100 "includes/menu.html" %}
                 {% endwith %}
@@ -43,6 +43,61 @@
         {% block content %}
             <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
         {% endblock %}
+        <footer class="bg-primary">
+          <div class="container-fluid">
+           <div class="row">
+            <div class="col-sm-3 pt-10">
+                  <img src="./img/sds.png" width="150" height="150" alt="">
+            </div>
+            <div class="col-sm-3" style="padding-top: 20px;"><h4>Contact Us</h4>
+              <br />
+              <p><a href="hello@africa.pycon.org" class="font-weight-bold">hello@africa.pycon.org</a></p>
+            </div>
+            <div class="col-sm-3 font-weight-bold" style="padding-top: 20px;">
+               <h4>Newsletter</h4>
+               <br />
+              <form action="" method="post" role="form">
+                 <div class="input-group">
+                 <input type="email" class="form-control" placeholder="Enter your email">
+                 <span class="input-group-btn">
+                 <button class="btn btn-warning" type="submit"><i class="fa fa-paper-plane"></i></button>
+                 </span>
+                  </div>
+                     <p class="float-left">Stay in touch with us</p>
+               </form>
+            </div>
+            <div class="col-sm-3" style="padding-top: 20px;">
+              <h4>Get Social</h4>
+              <br />
+          <!-- Social buttons -->
+            <ul class="list-unstyled list-inline font-weight-bold">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                  <i class="fa fa-facebook"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                  <i class="fa fa-twitter"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                  <i class="fa fa-instagram"> </i>
+                </a>
+                </a>
+              </li>
+            </ul>
+            <!-- Social buttons -->
+            </div>
+
+            <div class="row mt-20">
+              <div class="col-sm-12 float-right">Python/Django web hosting for PyCon Africa is generously donated by <a href="https://www.divio.com/">Divio Cloud</a></div>
+            </div>
+           </div>
+          </div>
+        </footer>
+
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
