@@ -7,8 +7,9 @@ body {
     
     /* Center and scale the image nicely */
     background-position: center;
-    background-size: 90% 90%;
+    background-size: auto 60%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 footer {
@@ -43,6 +44,7 @@ main {
 
 .navbar-brand {
     padding: 4px 15px;
+    height: 80px;
 }
 
 a {
@@ -51,3 +53,27 @@ a {
     font-weight: bold;
 }
 
+.nav-item {
+    font-size: 18px;
+}
+
+@media(min-width: 768px) {
+    .navbar-nav>li>a {
+        padding: 8px;
+    }
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: transparent;
+}
+
+.nav-item.active {
+    border-bottom: 2px solid #327AB7;
+}
+.nav.navbar-nav {
+    padding: 20px;
+}
+
+.navbar {
+    min-height: 100px;
+}

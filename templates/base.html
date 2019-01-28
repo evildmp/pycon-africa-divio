@@ -23,20 +23,21 @@
     {{ ALDRYN_SNAKE.render_head }}
   </head>
   <body>
+
     {% cms_toolbar %}
-
-    <nav class="navbar navbar-expand-lg  bg-primary font-weight-bold text-uppercase">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav navbar-right navbar-dark mr-auto">
-                {% with dropdown=True %}
-                    {% show_menu 0 0 100 100 "includes/menu.html" %}
-                {% endwith %}
-            </ul>
-        </div>
+    <nav class="navbar">
+      <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'img/design1a.png' %}" height="80" alt="PyCon Africa">
+      </a>
+    </div>
+        <ul class="nav navbar-nav navbar-right navbar-dark font-weight-bold">
+            {% with dropdown=True %}
+                {% show_menu 0 0 100 100 "includes/menu.html" %}
+            {% endwith %}
+        </ul>
+      </div>
     </nav>
 
     <div class="container py-3">
