@@ -53,27 +53,3 @@ a {
     font-weight: bold;
 }
 
-.nav-item {
-    font-size: 18px;
-}
-
-@media(min-width: 768px) {
-    .navbar-nav>li>a {
-        padding: 8px;
-    }
-}
-
-.nav>li>a:focus, .nav>li>a:hover {
-    background-color: transparent;
-}
-
-.nav-item.active {
-    border-bottom: 2px solid #327AB7;
-}
-.nav.navbar-nav {
-    padding: 20px;
-}
-
-.navbar {
-    min-height: 100px;
-}

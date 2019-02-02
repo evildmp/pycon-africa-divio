@@ -1,7 +1,7 @@
 {% load staticfiles i18n cms_tags menu_tags sekizai_tags %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,8 @@
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/page_wide_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,42 +23,83 @@
 
     {% render_block "css" %}
     {{ ALDRYN_SNAKE.render_head }}
-  </head>
-  <body>
+</head>
+<body>
 
-    {% cms_toolbar %}
-    <nav class="navbar">
-      <div class="container-fluid">
-      <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img src="{% static 'img/design1a.png' %}" height="80" alt="PyCon Africa">
-      </a>
+{% cms_toolbar %}
+
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/design1a.png' %}" height="80" alt="PyCon Africa">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                {% with dropdown=True %}
+                    {% show_menu 0 0 100 100 "includes/menu.html" %}
+                {% endwith %}
+            </ul>
+        </div>
     </div>
-        <ul class="nav navbar-nav navbar-right navbar-dark font-weight-bold">
-            {% with dropdown=True %}
-                {% show_menu 0 0 100 100 "includes/menu.html" %}
-            {% endwith %}
-        </ul>
-      </div>
-    </nav>
+</nav>
 
-    <div class="container py-3">
-        {% block content %}
-            <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
-        {% endblock %}
-        <footer class="bg-primary">
-          {% static_placeholder "footer"%}
+<div class="container py-3">
+    {% block content %}
+        <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
+    {% endblock %}
+    <footer class="bg-primary">
+        {% static_placeholder "footer" %}
 
-        </footer>
+    </footer>
 
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+{% render_block "js" %}
+
+{{ ALDRYN_SNAKE.render_tail }}
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+        <img src="{% static 'img/sds.png' %}">
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <div class="footer-center">
 
-    {% render_block "js" %}
-    {{ ALDRYN_SNAKE.render_tail }}
-  </body>
+        <p class="footer-company-about">
+            <span>Contact us</span>
+        </p>
+        <div class="footer-icons">
+            <a href="mailto:hello@pyconafrica.pycon.org">hello@africa.pycon.org</a>
+        </div>
+
+    </div>
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>Get Social</span>
+        </p>
+
+        <div class="footer-icons">
+            <a href="https://instagram.com/pyconafrica" class="fa fa-instagram"></a>
+            <a href="https://facebook.com/pyconafrica" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/pyconafrica" class="fa fa-twitter"></a>
+
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <p style="text-align: center;">Python/Django web hosting for PyCon Africa is generously donated by <a href="https://divio.com">Divio</a> Cloud.</p>
+
+</footer>
+</body>
 </html>
