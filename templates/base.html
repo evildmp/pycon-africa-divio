@@ -9,8 +9,7 @@
     <title>{% block title %}{% page_attribute page_title %} - {{ request.site.name }}{% endblock title %}</title>
 
     <!-- Bootstrap -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/page_wide_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
 
@@ -50,10 +49,6 @@
     {% block content %}
         <p>Hello world! This is the Bootstrap 4 Boilerplate.</p>
     {% endblock %}
-    <footer class="bg-primary">
-        {% static_placeholder "footer" %}
-
-    </footer>
 
 </div>
 
@@ -66,40 +61,5 @@
 
 {{ ALDRYN_SNAKE.render_tail }}
 
-<footer class="footer-distributed">
-
-    <div class="footer-left">
-        <img src="{% static 'img/sds.png' %}">
-    </div>
-
-    <div class="footer-center">
-
-        <p class="footer-company-about">
-            <span>Contact us</span>
-        </p>
-        <div class="footer-icons">
-            <a href="mailto:hello@pyconafrica.pycon.org">hello@africa.pycon.org</a>
-        </div>
-
-    </div>
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>Get Social</span>
-        </p>
-
-        <div class="footer-icons">
-            <a href="https://instagram.com/pyconafrica" class="fa fa-instagram"></a>
-            <a href="https://facebook.com/pyconafrica" class="fa fa-facebook"></a>
-            <a href="https://twitter.com/pyconafrica" class="fa fa-twitter"></a>
-
-        </div>
-
-    </div>
-    <br>
-    <br>
-    <p style="text-align: center;">Python/Django web hosting for PyCon Africa is generously donated by <a href="https://divio.com">Divio</a> Cloud.</p>
-
-</footer>
 </body>
 </html>
