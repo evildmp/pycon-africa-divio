@@ -1,78 +1,117 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+/* ----------------- basic HTML elements ------------- */
+
+html {
+  /* required for the sticky footer */
+  position: relative;
+  min-height: 100%;
+}
 
 body {
 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
 
-    margin-right: auto;
-    margin-left: auto;
-    max-width: auto;
-    padding-right: 10px;
-    padding-left: 10px;
+    }
 
-    width: 100%;
-    height: 750px;
+h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;}
 
+h1 {
+  font-size: 130%;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 140%;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 110%;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 110%;
+  font-weight: 300;
+}
+
+
+/* -------------- layout components ---------------- */
+
+.masthead {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+
+main {margin-top: 10px;}
+
+/* for larger viewports only, we display the background image */
+
+@media all and (min-width:720px) {
+
+  main {
     /* Center and scale the image nicely */
-  	background-image: url("../img/loo.png");
-    background-position: center;
-    background-size: auto 60%;
+    position: relative;
+  	background-image: url("../img/africa-dotted.png");
+    background-position: center 100%;
+    background-size: auto 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-
-/*    background-image: url("../img/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-*/}
-
-
-main {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
+    }
 }
 
-.nav-menu ul {
-    position: absolute;
-    width: 900px;
-    height: 50px;
-    top: 35%;
-    left: 35%;
-    padding: 0px;
-    list-style: none;
-    text-align: center;
-
+footer {
+  background-color: #3F79A8;
+  color: white;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  margin-top: 50px;
 }
 
-.nav-menu li {
-    position: relative;
-    font-family: 'Roboto';
-    font-size: 20px;
-    display: inline-block;
-    padding: 0px 20px;
-    color: #FFD44e;
+/* ----------------- menu ------------- */
+
+.navbar-brand {
+  display: block;
+  text-align: center;
 }
 
-.nav-menu ul li a {
-    text-decoration: none;
-    color: #FFD44e;
+.navbar-brand img {max-width: 100%;}
+
+nav.navbar {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 110%;
+  color: #FFD44E;
+  }
+
+nav .navbar-toggler {
+  color: #3F79A8;
+  border: 2px solid #3F79A8;
+  background: #FFD44E;
 }
 
+nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
 
-.about-Pycon-Africa {
-    margin: 0;
-    padding: 0;
-    boz-sizing: border-box;
-    font-family: "Open Sans", sans-serif
-}
-
-.nav-link {
-    position: relative;
-}
-
-.nav-link:after {
+nav li a:after {
     content: '';
     position: absolute;
     width: 0;
@@ -85,163 +124,36 @@ main {
     -webkit-transition: width .2s ease;
 }
 
-.nav-link:hover:after {
+nav li a:hover:after {
     width: 100%;
     left: 0;
     background: #3F79A8;
     text-decoration: none;
 }
 
-.overlay {
-    color: #1E1E1E;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(30, 30, 30, 100%);
-    z-index: 10;
-}
-
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-.tagline {
-    position: absolute;
-    text-align: center;
-    left: 23.39%;
-    right: 15.42%;
-    top: 85%;
-    bottom: 75.36%;
-
-    font-family: 'Roboto';
-    font-size: 20px;
-
-    color: #FFFFFF;
-}
-
-.logo {
-    position: absolute;
-    left: 40%;
-    right: 30.31%;
-    top: 55%;
-    bottom: 77.65%;
-}
-
-
-.date {
-    position: absolute;
-    left: 48.59%;
-    right: 38.39%;
-    top: 92%;
-    font-style: bold;
-    bottom: 73.48%;
-    font-family: 'Roboto';
-    font-size: 15px;
-    color: #fff;
-}
-
-.month {
-    position: absolute;
-    left: 47%;
-    right: 38.39%;
-    top: 95%;
-    bottom: 80%;
-    font-family: 'Roboto';
-    color: #FFD44E;
-}
-
-.year {
-    position: absolute;
-    left: 50%;
-    right: 40.78%;
-    top: 102%;
-    bottom: 73.48%;
-    font-family: 'Roboto';
-    font-size: 15px;
-    color: #fff;
-}
-
-.title {
-    color: #3F79A8;
-    font-style: 'Roboto';
-
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #3F79A8;
-    color: white;
-}
-
-.footer-left img {
-    width: 100px
-}
-
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    color: #fff;
-    text-align: right;
+nav li a {
     text-decoration: none;
-    border-radius: 50%;
-}
+    color: #FFD44E;
+    position: relative;
+    }
 
-.social-media {
-    text-align: center;
-}
-
-.footer-logo {
-    align-self: left;
-}
-
-/*Timer CSS*/
-
-.container {
-  margin-top: 50px;
-}
-
-
-.m {
-    display: inline-block;
-    font-size: 1.5em;
-    list-style-type: none;
-    padding: 1em;
-    text-transform: uppercase;
-}
-
-.m span {
-    display: block;
-    font-size: 4.5rem;
-}
-
-
-.row {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* card basics */
+/* ----------------- card basics ------------- */
 
 .card {
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
     background: #fff;
-    /*border-radius: .5rem; disabled because of issues with the corners*/
     margin-bottom: 10px;
+}
+
+.card .card {
+  box-shadow: none;
 }
 
 .card-header {
     padding: 12px
 }
 
-.card-header h2 {
+.card-header h2, .card-header h3, .card-header h4,  {
     margin: 0px;
 }
 
@@ -250,18 +162,22 @@ main {
 }
 
 
-/* card colours
+/* ----------------- card colours -------------
 
-strong blue #336E99 or 3F79A8
-pale blue #8AB9D9
+strong blue #3F79A8
+medium blue #8AB9D9
+pale blue #D8EEFF
 
 strong yellow #FFD44E
-pale yellow #FFEAAD
+medium yellow #FFEAAD
+pale yellow #FFF9E5
 
 */
 
-
 .card.bg-primary .card-header {background-color: #3F79A8; color: white;}
-.card.bg-primary .card-body {background-color: #8AB9D9}
+.card.bg-primary .card-body {background-color: #D8EEFF}
+.card.bg-primary .card-footer {background-color: #8AB9D9}
+
 .card.bg-secondary .card-header {background-color: #FFD44E; color: white;}
-.card.bg-secondary .card-body {background-color: #FFEAAD}
+.card.bg-secondary .card-body {background-color: #FFF9E5}
+.card.bg-secondary .card-footer {background-color: #FFEAAD}
