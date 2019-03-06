@@ -8,24 +8,7 @@
 FROM aldryn/base-project:py3-3.25.1
 # </DOCKER_FROM>
 
-# <NODE>
-ADD build /stack/boilerplate
-
-ENV NODE_VERSION=6.10.1 \
-    NPM_VERSION=3.10.10
-
-RUN bash /stack/boilerplate/install.sh
-
-ENV NODE_PATH=$NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules \
-    PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-# </NODE>
-
 # <NPM>
-# package.json is put into / so that mounting /app for local
-# development does not require re-running npm install
-ENV PATH=/node_modules/.bin:$PATH
-COPY package.json /
-RUN (cd / && npm install --production && rm -rf /tmp/*)
 # </NPM>
 
 # <BOWER>
@@ -48,8 +31,6 @@ COPY . /app
 # </SOURCE>
 
 # <GULP>
-ENV GULP_MODE=production
-RUN gulp build
 # </GULP>
 
 # <STATIC>
