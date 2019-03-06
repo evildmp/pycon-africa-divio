@@ -9,8 +9,6 @@ FROM aldryn/base-project:py3-3.25.1
 # </DOCKER_FROM>
 
 # <NPM>
-# package.json is put into / so that mounting /app for local
-# development does not require re-running npm install
 # </NPM>
 
 # <BOWER>
