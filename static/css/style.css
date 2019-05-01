@@ -85,6 +85,8 @@ footer {
   margin-top: 50px;
 }
 
+footer a:link, footer a:hover {color: white;}
+
 /* ----------------- menu ------------- */
 
 .navbar-brand {
