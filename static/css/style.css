@@ -85,7 +85,7 @@ footer {
   margin-top: 50px;
 }
 
-footer a:link, footer a:hover {color: white;}
+footer a:link, footer a:hover, footer a:visited {color: white; font-weight: bold;}
 
 /* ----------------- menu ------------- */
 
