@@ -4,7 +4,7 @@ https://control.divio.com/api/v1/apps/serve/aldryn-django/1.11.20.4/88bb59c4-1ab
 https://control.divio.com/api/v1/apps/serve/aldryn-sso/1.6.0/6d90e844-d7ef-4faa-b527-5df3d49277be/aldryn-sso-1.6.0.tar.gz#egg=aldryn-sso==1.6.0
 https://control.divio.com/api/v1/apps/serve/aldryn-django-cms/3.5.3.4/1263fabd-aab8-4638-9d16-bd2e76d43b94/aldryn-django-cms-3.5.3.4.tar.gz#egg=aldryn-django-cms==3.5.3.4
 https://control.divio.com/api/v1/apps/serve/djangocms-bootstrap4/1.4.0/cb0dab10-8bab-41aa-af79-100be338a3fb/djangocms-bootstrap4-1.4.0.tar.gz#egg=djangocms-bootstrap4==1.4.0
-https://control.divio.com/api/v1/apps/serve/djangocms-file/2.2.0/923d718c-d74e-45aa-b365-cddc2f074e02/djangocms-file-2.2.0.tar.gz#egg=djangocms-file==2.2.0
+https://control.divio.com/api/v1/apps/serve/djangocms-file/2.3.0/fad831bb-d011-4004-8500-e794eb601bf2/djangocms-file-2.3.0.tar.gz#egg=djangocms-file==2.3.0
 https://control.divio.com/api/v1/apps/serve/djangocms-googlemap/1.2.0/2b53374c-9d0b-47cf-9006-be1c798fa7be/djangocms-googlemap-1.2.0.tar.gz#egg=djangocms-googlemap==1.2.0
 https://control.divio.com/api/v1/apps/serve/djangocms-history/1.0.0/9ced0786-b47c-4df1-8794-6654d618d753/djangocms-history-1.0.0.tar.gz#egg=djangocms-history==1.0.0
 https://control.divio.com/api/v1/apps/serve/djangocms-icon/1.2.0/b5e36060-d83c-4524-bda2-058384e31ffc/djangocms-icon-1.2.0.tar.gz#egg=djangocms-icon==1.2.0
