@@ -2,7 +2,9 @@
 import json
 import os
 import sys
+
 from aldryn_client import forms
+
 
 SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not change it here.'
 
@@ -223,6 +225,8 @@ class Form(forms.BaseForm):
         return settings
 
     def domain_settings(self, data, settings, env):
+        from aldryn_addons.utils import boolean_ish
+
         settings['ALLOWED_HOSTS'] = env('ALLOWED_HOSTS', ['localhost', '*'])
         # will take a full config dict from ALDRYN_SITES_DOMAINS if available,
         # otherwise fall back to constructing the dict from DOMAIN,
@@ -232,6 +236,8 @@ class Form(forms.BaseForm):
             settings['DOMAIN'] = domain
 
         domains = env('ALDRYN_SITES_DOMAINS', {})
+        permanent_redirect = boolean_ish(env('ALDRYN_SITES_REDIRECT_PERMANENT', False))
+
         if not domains and domain:
             domain_aliases = [
                 d.strip()
@@ -252,6 +258,7 @@ class Form(forms.BaseForm):
                 },
             }
         settings['ALDRYN_SITES_DOMAINS'] = domains
+        settings['ALDRYN_SITES_REDIRECT_PERMANENT'] = permanent_redirect
 
         # This is ensured again by aldryn-sites, but we already do it here
         # as we need the full list of domains later when configuring
@@ -358,16 +365,16 @@ class Form(forms.BaseForm):
         sentry_dsn = env('SENTRY_DSN')
 
         if sentry_dsn:
-            settings['INSTALLED_APPS'].append('raven.contrib.django')
-            settings['RAVEN_CONFIG'] = {
-                'dsn': sentry_dsn,
-                'release': env('GIT_COMMIT', 'develop'),
-                'environment': env('STAGE', 'local'),
-            }
-            settings['LOGGING']['handlers']['sentry'] = {
-                'level': 'ERROR',
-                'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-            }
+            import sentry_sdk
+            from sentry_sdk.integrations.django import DjangoIntegration
+
+            sentry_sdk.init(
+                dsn=sentry_dsn,
+                integrations=[DjangoIntegration()],
+                debug=settings['DEBUG'],
+                release=env('GIT_COMMIT', 'develop'),
+                environment=env('STAGE', 'local'),
+            )
 
     def storage_settings_for_media(self, settings, env):
         import yurl
