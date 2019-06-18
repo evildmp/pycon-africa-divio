@@ -200,6 +200,6 @@ pale yellow #FFF9E5
 .card.bg-primary .card-body {background-color: #D8EEFF}
 .card.bg-primary .card-footer {background-color: #8AB9D9}
 
-.card.bg-secondary .card-header {background-color: #FFD44E; color: white;}
+.card.bg-secondary .card-header {background-color: #FFD44E; color: black;}
 .card.bg-secondary .card-body {background-color: #FFF9E5}
 .card.bg-secondary .card-footer {background-color: #FFEAAD}
