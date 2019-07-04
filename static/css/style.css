@@ -184,6 +184,21 @@ nav li a {
 }
 
 
+
+.card-group.programme .card-header {
+  border: 1px solid black;
+  border-right: 0;
+  border-radius: 0;
+}
+
+@media all and (max-width:576px) {
+  .card {border: 0px;}
+  .card-group .card {margin-bottom: 0;}
+  .card-group.programme .card-header {border: 0;}
+}
+
+
+
 /* ----------------- card colours -------------
 
 strong blue #3F79A8
