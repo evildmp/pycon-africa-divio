@@ -184,18 +184,7 @@ nav li a {
 }
 
 
-
-/*.card-group.programme .card-header {
-  border: 1px solid black;
-  border-right: 0;
-  border-radius: 0;
-}
-
-@media all and (max-width:576px) {
-  .card {border: 0px;}
-  .card-group .card {margin-bottom: 0;}
-  .card-group.programme .card-header {border: 0;}
-}*/
+/* For the programme listing */
 
 .card {border: 0px;}
 .card-group .card {margin-bottom: 0;}
@@ -204,9 +193,24 @@ nav li a {
   border-radius:0;
   background: #444;
   color: white;}
-  .card-group.programme .card-header p {margin-bottom: 0};
 
+.card-group.programme .card-header p {margin-bottom: 0}
 
+div.card-group.programme .card-header::before {
+  font-size: 40%;
+  text-transform: uppercase;
+}
+
+div.tuesday .card-group.programme .card-header::before {content: "Tues";}
+div.tuesday .card-group.programme .card-header {background: #FFEAAD; color: black;}
+div.wednesday .card-group.programme .card-header::before {content: "Weds";}
+div.wednesday .card-group.programme .card-header {background: #8AB9D9; color: black;}
+div.thursday .card-group.programme .card-header::before {content: "Thurs";}
+div.thursday .card-group.programme .card-header {background: black;}
+div.friday .card-group.programme .card-header::before {content: "Fri";}
+div.friday .card-group.programme .card-header {background: #3F79A8;}
+div.saturday .card-group.programme .card-header::before {content: "Sat";}
+div.saturday .card-group.programme .card-header {background: gray;}
 
 /* ----------------- card colours -------------
 
