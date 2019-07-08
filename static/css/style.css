@@ -195,6 +195,7 @@ nav li a {
   color: white;}
 
 .card-group.programme .card-header p {margin-bottom: 0}
+.card-group.programme .card-body p {margin-bottom: 0}
 
 div.card-group.programme .card-header::before {
   font-size: 40%;
